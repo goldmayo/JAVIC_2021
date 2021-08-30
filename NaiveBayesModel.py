@@ -6,7 +6,7 @@ import yaml
 import pickle
 import os
 
-class NB_classifier_interface():
+class NaiveBayesClassifier():
     def __init__(self):
         print(f'this is NBM id : {id(self)}')
         self.classifier = NaiveBayesClassifier
@@ -77,23 +77,23 @@ class NB_classifier_interface():
         print("---after train isTrain :",self._isTrain)
         return
 
-    def getFeatures(self):
+    def get_features(self):
         # classifier = load_model()
         features = set( word[0] for word in self.classifier.most_informative_features())
         # del(classifier)
         return features
     
-    def getLabels(self):
+    def get_labels(self):
         # classifier = load_model()
         labels = self.classifier.labels()
         # del(classifier)
         return labels    
 
-    def getPredict(self,sentence):
+    def get_predict(self,sentence):
         print("<NB> --- sentence :",sentence)
         userinput = self.__tokenizer.morphs(sentence,stem=True,norm=False)
         print("<NB> --- userinput :",userinput)
-        preprocessed_sentence = { word : ( word in userinput ) for word in self.getFeatures() }
+        preprocessed_sentence = { word : ( word in userinput ) for word in self.get_features() }
         # print("---prep_sentence: ",preprocessed_sentence, type(preprocessed_sentence))
         # print("---prep_sentence: ",preprocessed_sentence.keys(), type(preprocessed_sentence))
 

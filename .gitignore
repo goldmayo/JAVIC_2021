@@ -29,3 +29,5 @@ data/english
 __pycache__
 .vscode
 src/
+test.py
+database.db

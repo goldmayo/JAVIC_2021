@@ -1,5 +1,5 @@
 import json
-def wrapContent(content,after=None,type="plain text"):
+def wrap_content(content,after=None,type="plain text"):
     rst = {"header":{"message_version":"0.0.1b","message_type":type},"content":content}
     if(after is None):
         rst["after_content"] = {"recommended_delay_ms":0,"actions":[]}

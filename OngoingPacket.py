@@ -1,15 +1,15 @@
 class IOngoingPacket(object):
     def __init__(self):
         pass
-    def hasNext(self):
+    def has_next(self):
         raise NotImplementedError()
-    def getNext(self):
+    def get_next(self):
         raise NotImplementedError()
-    def putCurrentResponse(self,resp):
+    def put_current_response(self,resp):
         raise NotImplementedError()
-    def getData(self):
+    def get_data(self):
         raise NotImplementedError()
-    def getServiceName(self):
+    def get_service_name(self):
         raise NotImplementedError()    
-    def doSequence(self,selected_statement):
+    def do_sequence(self,selected_statement):
         return NotImplementedError()

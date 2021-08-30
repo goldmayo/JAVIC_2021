@@ -21,3 +21,11 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+chatbot-env
+
+data/english
+
+__pycache__
+.vscode
+src/

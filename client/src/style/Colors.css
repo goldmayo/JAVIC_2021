@@ -1,0 +1,25 @@
+:root {
+  --header-bg: cornflowerblue;
+  --header-text: #e9ecef;
+
+  --chat-container-bg: #ffffff;
+  --chat-menu-btn-bg: #ffffff;
+
+  --server-msg-text: #000000;
+  --server-msg-bg: #fafafa;
+  --server-msg-border: #e9ecef;
+
+  --user-msg-text: #ffffff;
+  --user-msg-bg: #007bff;
+
+  --msg-time-stamp: #546e7a;
+
+  --footer-bg: #ffffff;
+  --quick-btn-bg: #e9ecef;
+  --quick-btn-container-bg: #ffffff;
+
+  --input-bg: #ffffff;
+  --input-border: #e9ecef;
+
+  --send-btn-bg: #6c757d;
+}

@@ -1,0 +1,10 @@
+.chatcontainer {
+  height: 81vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatcontainer:hover {
+  overflow-y: auto;
+}

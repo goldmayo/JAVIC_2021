@@ -1,0 +1,26 @@
+@import "../style/Colors.css";
+
+.wraper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 7vh;
+  min-height: 7vh;
+  /* height: 7%; */
+  background-color: var(--header-bg);
+  color: var(--header-text);
+}
+.wraper__botName {
+  font-size: 6vh;
+  /* font-size: 1rem; */
+  /* min-height: 1rem; */
+  margin: 0 0 0 0.625rem;
+}
+
+.wraper__menuIcon {
+  margin: 0 0.625rem 0 0;
+  font-size: 1rem;
+}
+
+/* 엘리 헤더 강의 반응형? */

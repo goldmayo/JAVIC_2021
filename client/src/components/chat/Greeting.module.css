@@ -1,0 +1,37 @@
+@import "../../style/Colors.css";
+@import "./Chat.module.css";
+
+.chatNode {
+  margin: 1em 1em 1em 1em;
+  max-width: 75%;
+}
+
+.greetingNode {
+  display: block;
+  float: left;
+  color: #000000;
+  background-color: var(--server-msg-bg);
+  border-radius: 30px 30px 30px 30px;
+  padding: 7px 13px 7px 13px;
+  border: 1px solid var(--server-msg-border);
+  margin-top: 0.2em;
+}
+
+.greetingNode__msg span {
+  display: inline-block;
+  margin-bottom: 0.5em;
+}
+
+.greetingNode__button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 0.5em;
+}
+
+.greetingNode__button button {
+  flex-basis: 48%;
+  background-color: #ffffff;
+  padding: 0.5em 0.2em 0.5em 0.2em;
+  border: 1px solid var(--server-msg-border);
+}

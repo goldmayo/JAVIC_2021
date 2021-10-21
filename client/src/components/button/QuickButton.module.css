@@ -1,0 +1,17 @@
+@import "../../style/Colors.css";
+
+.quickbtn {
+  height: 6vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* padding-bottom: 0.1rem; */
+  background-color: var(--quick-btn-container-bg);
+}
+
+.quickbtn button {
+  height: 100%;
+  flex-basis: 33%;
+  background-color: var(--quick-btn-bg);
+  border-style: none;
+}

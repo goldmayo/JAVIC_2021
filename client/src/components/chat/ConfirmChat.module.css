@@ -1,0 +1,20 @@
+@import "../../style/Colors.css";
+@import "./Chat.module.css";
+
+.confirmNode span {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.confirmNode__button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 0.5rem;
+}
+.confirmNode__button button {
+  flex-basis: 45%;
+  background-color: var(--chat-menu-btn-bg);
+  padding: 0.5rem 0.2rem 0.5rem 0.2rem;
+  border: 1px solid var(--server-msg-border);
+}

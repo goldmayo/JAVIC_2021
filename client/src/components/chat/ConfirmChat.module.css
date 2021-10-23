@@ -18,3 +18,8 @@
   padding: 0.5rem 0.2rem 0.5rem 0.2rem;
   border: 1px solid var(--server-msg-border);
 }
+
+.confirmNode__button button {
+  color: white;
+  background-color: var(--send-btn-bg);
+}

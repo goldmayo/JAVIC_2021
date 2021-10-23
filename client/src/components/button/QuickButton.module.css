@@ -10,8 +10,15 @@
 }
 
 .quickbtn button {
+  font-size: 1.5vh;
   height: 100%;
   flex-basis: 33%;
   background-color: var(--quick-btn-bg);
   border-style: none;
+  padding: 0 0.4rem 0 0.4rem;
+}
+
+.quickbtn button:hover {
+  color: white;
+  background-color: var(--quick-btn-hover-bg);
 }

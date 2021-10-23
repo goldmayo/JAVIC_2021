@@ -35,3 +35,7 @@
   padding: 0.5em 0.2em 0.5em 0.2em;
   border: 1px solid var(--server-msg-border);
 }
+.greetingNode__button button:hover {
+  color: white;
+  background-color: var(--send-btn-bg);
+}

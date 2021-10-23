@@ -9,6 +9,9 @@
   --server-msg-bg: #fafafa;
   --server-msg-border: #e9ecef;
 
+  /* --server-btn-bg:#ffffff;
+  --server-btn-hover-bg:#6c757d; */
+
   --user-msg-text: #ffffff;
   --user-msg-bg: #007bff;
 
@@ -16,10 +19,13 @@
 
   --footer-bg: #ffffff;
   --quick-btn-bg: #e9ecef;
+  --quick-btn-hover-bg: cornflowerblue;
   --quick-btn-container-bg: #ffffff;
 
   --input-bg: #ffffff;
   --input-border: #e9ecef;
 
   --send-btn-bg: #6c757d;
+  --send-btn-hover-bg: #ffffff;
+  --send-btn-icon-hover-bg: cornflowerblue;
 }

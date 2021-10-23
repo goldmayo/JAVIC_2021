@@ -1,17 +1,12 @@
 button {
   text-align: center;
-  vertical-align: middle;
-  line-height: 1em;
-  font-size: 2vh;
-  /* margin: 0 6px 0 0 */
+  line-height: 1vh;
+  padding: 0 0.4rem 0 0;
 }
 
 .button__icon {
-  display: inline-block;
+  /* display: inline-block; */
   margin: 0 0.3em 0 0;
 }
 
-.button__icon i svg {
-  height: 2vh;
-  width: 2vw;
-}
+/* 버튼 모서리 확대시 이상함 균일하게 바꿀방법? */

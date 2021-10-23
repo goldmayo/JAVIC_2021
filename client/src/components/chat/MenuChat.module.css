@@ -12,9 +12,15 @@
   justify-content: space-around;
   margin-bottom: 0.5rem;
 }
+
 .menuNode__button button {
   flex-basis: 48%;
   background-color: var(--chat-menu-btn-bg);
   padding: 0.5rem 0.2rem 0.5rem 0.2rem;
   border: 1px solid var(--server-msg-border);
+}
+
+.menuNode__button button:hover {
+  color: white;
+  background-color: var(--send-btn-bg);
 }

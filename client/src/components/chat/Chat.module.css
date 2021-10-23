@@ -5,6 +5,7 @@
 }
 .chatnode p {
   margin: 0;
+  /* font-size: 1vh; */
 }
 .userNode {
   max-width: 75%;

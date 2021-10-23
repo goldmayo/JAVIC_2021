@@ -17,19 +17,31 @@
   /* border: 2px solid var(--input-border); */
   font-size: 2vh;
 }
-
+.formContainer input:focus {
+  outline: var(--send-btn-bg) soild 1px;
+}
 .formContainer button {
   flex-basis: 25%;
   max-width: 25%;
-  border-style: none;
+  border: 1px soild var(--send-btn-bg);
   border-radius: 30px 30px 30px 30px;
   background-color: var(--send-btn-bg);
   color: white;
+  padding: 0 0.4rem 0 0.4rem;
 }
 
 .formContainer button svg {
   height: 3vh;
   width: 3vw;
+}
+
+.formContainer button:hover {
+  background-color: var(--send-btn-hover-bg);
+  border: 2px solid cornflowerblue;
+}
+
+.formContainer button:hover svg {
+  fill: var(--send-btn-icon-hover-bg);
 }
 /* 폰트 사이즈 플래이스 홀더 위치 */
 /* 포커스 보더 색상 좀 더 연하게 */

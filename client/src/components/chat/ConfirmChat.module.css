@@ -23,3 +23,12 @@
   color: white;
   background-color: var(--send-btn-bg);
 }
+
+@media screen and (max-width: 480px) {
+  .confirmNode__button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 0.5rem;
+  }
+}

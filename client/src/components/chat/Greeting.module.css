@@ -39,3 +39,18 @@
   color: white;
   background-color: var(--send-btn-bg);
 }
+
+@media screen and (max-width: 480px) {
+  .greetingNode__button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 0.5em;
+  }
+}
+
+/* @media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 1024px) {
+} */

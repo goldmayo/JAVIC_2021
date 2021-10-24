@@ -1,3 +1,5 @@
+@import "../style/Colors.css";
+
 .chatcontainer {
   height: 81vh;
   overflow: hidden;
@@ -7,4 +9,12 @@
 
 .chatcontainer:hover {
   overflow-y: auto;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 9px;
+  background: var(--chat-container-scrollbar-bg);
 }

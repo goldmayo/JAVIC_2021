@@ -17,9 +17,11 @@
   /* border: 2px solid var(--input-border); */
   font-size: 2vh;
 }
-.formContainer input:focus {
-  outline: var(--send-btn-bg) soild 1px;
-}
+
+/* .formContainer input:focus {
+  outline: var(--send-btn-bg) 1px;
+} */
+
 .formContainer button {
   flex-basis: 25%;
   max-width: 25%;

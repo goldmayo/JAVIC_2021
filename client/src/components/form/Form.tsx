@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useChatDispatch } from "../../context/ContextProvier";
+import { useChatDispatch } from "../../context/ChatContextProvier";
 import { userMessage, sendMessage } from "../../actions/ChatActions";
 import classNames from "classnames/bind";
 import { FaPaperPlane } from "react-icons/fa";

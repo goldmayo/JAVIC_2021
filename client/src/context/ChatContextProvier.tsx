@@ -1,7 +1,7 @@
 import { useReducer, useContext } from "react";
-import { ChatContext, ChatDispatchContext, reducer } from "./Context";
+import { ChatContext, ChatDispatchContext, reducer } from "./ChatContext";
 
-export function ContextProvier({ children }: { children: React.ReactNode }) {
+export function ChatContextProvier({ children }: { children: React.ReactNode }) {
   const [chats, dispatch] = useReducer(reducer, []);
   return (
     <ChatDispatchContext.Provider value={dispatch}>

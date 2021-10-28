@@ -4,13 +4,13 @@ import Footer from "./components/Footer";
 import Form from "./components/form/Form";
 import Chat from "./components/chat/Chat";
 import QuickButton from "./components/button/QuickButton";
-import { ContextProvier } from "./context/ContextProvier";
+import { ChatContextProvier } from "./context/ChatContextProvier";
 
 import "./App.module.css";
 
 function App() {
   return (
-    <ContextProvier>
+    <ChatContextProvier>
       <Header />
       <ChatContainer>
         <Chat />
@@ -19,7 +19,7 @@ function App() {
         <QuickButton />
         <Form />
       </Footer>
-    </ContextProvier>
+    </ChatContextProvier>
   );
 }
 

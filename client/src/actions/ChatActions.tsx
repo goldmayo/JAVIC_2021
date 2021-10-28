@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ChatDispatch } from "../context/Context";
+import { ChatDispatch } from "../context/ChatContext";
 import MenuChat from "../components/chat/MenuChat";
 import ConfirmChat from "../components/chat/ConfirmChat";
 

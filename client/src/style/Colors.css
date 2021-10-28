@@ -10,9 +10,6 @@
   --server-msg-bg: #fafafa;
   --server-msg-border: #e9ecef;
 
-  /* --server-btn-bg:#ffffff;
-  --server-btn-hover-bg:#6c757d; */
-
   --user-msg-text: #ffffff;
   --user-msg-bg: #007bff;
 
@@ -29,4 +26,9 @@
   --send-btn-bg: #6c757d;
   --send-btn-hover-bg: #ffffff;
   --send-btn-icon-hover-bg: cornflowerblue;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  }
 }

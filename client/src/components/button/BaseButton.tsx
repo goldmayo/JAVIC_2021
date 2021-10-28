@@ -1,4 +1,4 @@
-import { useChatDispatch } from "../../context/ContextProvier";
+import { useChatDispatch } from "../../context/ChatContextProvier";
 import { userMessage, sendMessage } from "../../actions/ChatActions";
 import { IconType } from "react-icons";
 import classNames from "classnames/bind";

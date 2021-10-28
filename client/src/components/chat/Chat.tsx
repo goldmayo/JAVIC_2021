@@ -1,7 +1,7 @@
 import { useRef, useLayoutEffect, useEffect } from "react";
 import classNames from "classnames/bind";
 
-import { useChatState } from "../../context/ContextProvier";
+import { useChatState } from "../../context/ChatContextProvier";
 import Greeting from "./Greeting";
 import BotProfile from "../profile/BotProfile";
 

@@ -6,9 +6,9 @@ import App from "./App";
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <ContextProvier> */}
+    {/* <ChatContextProvier> */}
     <App />
-    {/* </ContextProvier> */}
+    {/* </ChatContextProvier> */}
   </React.StrictMode>,
   document.getElementById("root")
 );

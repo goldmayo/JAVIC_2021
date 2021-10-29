@@ -22,3 +22,8 @@
   color: white;
   background-color: var(--quick-btn-hover-bg);
 }
+
+.quickbtn button:active {
+  color: white;
+  background-color: var(--active-button-color);
+}

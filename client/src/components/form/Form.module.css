@@ -7,6 +7,7 @@
   flex-direction: row;
   justify-content: space-around;
   /* padding: 0.2rem 0.1rem 0.2rem 0.1rem; */
+  background-color: var(--chat-container-bg);
 }
 .formContainer input {
   flex-basis: 75%;
@@ -16,6 +17,7 @@
   /* border-radius: 30px 30px 30px 30px; */
   /* border: 2px solid var(--input-border); */
   font-size: 2vh;
+  background-color: var(--input-bg);
 }
 
 /* .formContainer input:focus {

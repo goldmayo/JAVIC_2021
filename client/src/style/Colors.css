@@ -1,5 +1,7 @@
 :root {
-  --header-bg: cornflowerblue;
+  --active-button-color: #007bff;
+
+  --header-bg: #6495ed;
   --header-text: #e9ecef;
 
   --chat-container-bg: #ffffff;
@@ -11,13 +13,13 @@
   --server-msg-border: #e9ecef;
 
   --user-msg-text: #ffffff;
-  --user-msg-bg: #007bff;
+  --user-msg-bg: #6495ed;
 
   --msg-time-stamp: #546e7a;
 
   --footer-bg: #ffffff;
   --quick-btn-bg: #e9ecef;
-  --quick-btn-hover-bg: cornflowerblue;
+  --quick-btn-hover-bg: #6495ed;
   --quick-btn-container-bg: #ffffff;
 
   --input-bg: #ffffff;
@@ -25,10 +27,39 @@
 
   --send-btn-bg: #6c757d;
   --send-btn-hover-bg: #ffffff;
-  --send-btn-icon-hover-bg: cornflowerblue;
+  --send-btn-icon-hover-bg: #6495ed;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --active-button-color: #dee1ea;
+
+    --header-bg: #6495ed;
+    --header-text: #e9ecef;
+
+    --chat-container-bg: #242731;
+    --chat-container-scrollbar-bg: #6c757d;
+    --chat-menu-btn-bg: #6e7283;
+
+    --server-msg-text: #ffffff;
+    --server-msg-bg: #828798;
+    --server-msg-border: #6e7283;
+
+    --user-msg-text: #ffffff;
+    --user-msg-bg: #6495ed;
+
+    --msg-time-stamp: #ffffff;
+
+    --footer-bg: #242731;
+    --quick-btn-bg: #6e7283;
+    --quick-btn-hover-bg: #c6c9d6;
+    --quick-btn-container-bg: #242731;
+
+    --input-bg: #353945;
+    --input-border: #474b5a;
+
+    --send-btn-bg: #474b5a;
+    --send-btn-hover-bg: #c6c9d6;
+    --send-btn-icon-hover-bg: #6495ed;
   }
 }

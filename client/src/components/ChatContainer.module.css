@@ -5,6 +5,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  background-color: var(--chat-container-bg);
 }
 
 .chatcontainer:hover {

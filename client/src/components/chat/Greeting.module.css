@@ -9,7 +9,7 @@
 .greetingNode {
   display: block;
   float: left;
-  color: #000000;
+  color: var(--server-msg-text);
   background-color: var(--server-msg-bg);
   border-radius: 30px 30px 30px 30px;
   padding: 7px 13px 7px 13px;
@@ -30,13 +30,14 @@
 }
 
 .greetingNode__button button {
+  color: var(--server-btn);
   flex-basis: 48%;
-  background-color: #ffffff;
+  background-color: var(--server-btn-bg);
   padding: 0.5em 0.2em 0.5em 0.2em;
   border: 1px solid var(--server-msg-border);
 }
 .greetingNode__button button:hover {
-  color: white;
+  color: var(--server-btn-hover);
   background-color: var(--send-btn-bg);
 }
 

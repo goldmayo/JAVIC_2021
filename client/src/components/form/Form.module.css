@@ -10,6 +10,7 @@
   background-color: var(--chat-container-bg);
 }
 .formContainer input {
+  color: var(--input-text);
   flex-basis: 75%;
   max-width: 75%;
   border: none;
@@ -30,7 +31,7 @@
   border: 1px soild var(--send-btn-bg);
   border-radius: 30px 30px 30px 30px;
   background-color: var(--send-btn-bg);
-  color: white;
+  color: var(--send-btn-text);
   padding: 0 0.4rem 0 0.4rem;
 }
 
@@ -41,7 +42,7 @@
 
 .formContainer button:hover {
   background-color: var(--send-btn-hover-bg);
-  border: 2px solid cornflowerblue;
+  border: 2px solid var(--send-btn-icon-hover-bg);
 }
 
 .formContainer button:hover svg {

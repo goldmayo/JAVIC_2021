@@ -10,6 +10,7 @@
 }
 
 .quickbtn button {
+  color: var(--quick-btn-text);
   font-size: 1.5vh;
   height: 100%;
   flex-basis: 33%;
@@ -19,11 +20,15 @@
 }
 
 .quickbtn button:hover {
-  color: white;
+  color: var(--btn-hover-bg);
+  font-weight: bold;
   background-color: var(--quick-btn-hover-bg);
+  border: 2px solid var(--btn-hover-bg);
 }
 
 .quickbtn button:active {
-  color: white;
+  color: var(--btn-active-bg);
+  font-weight: bold;
   background-color: var(--active-button-color);
+  border: 2px solid var(--btn-active-bg);
 }

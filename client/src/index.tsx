@@ -2,13 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-// import { ContextProvier } from "./context/ContextProvier";
+// import { ThemeProvider } from "./context/ThemeProvider";
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <ChatContextProvier> */}
+    {/* <ThemeProvider> */}
     <App />
-    {/* </ChatContextProvier> */}
+    {/* </ThemeProvider> */}
   </React.StrictMode>,
   document.getElementById("root")
 );

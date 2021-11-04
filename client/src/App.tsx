@@ -5,21 +5,24 @@ import Form from "./components/form/Form";
 import Chat from "./components/chat/Chat";
 import QuickButton from "./components/button/QuickButton";
 import { ChatContextProvier } from "./context/ChatContextProvier";
+import { ThemeProvider } from "./context/ThemeProvider";
 
 import "./App.module.css";
 
 function App() {
   return (
-    <ChatContextProvier>
-      <Header />
-      <ChatContainer>
-        <Chat />
-      </ChatContainer>
-      <Footer>
-        <QuickButton />
-        <Form />
-      </Footer>
-    </ChatContextProvier>
+    <ThemeProvider>
+      <ChatContextProvier>
+        <Header />
+        <ChatContainer>
+          <Chat />
+        </ChatContainer>
+        <Footer>
+          <QuickButton />
+          <Form />
+        </Footer>
+      </ChatContextProvier>
+    </ThemeProvider>
   );
 }
 

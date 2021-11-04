@@ -3,11 +3,11 @@ import React, { useState, useLayoutEffect } from "react";
 import { LIGHT_THEME, DARK_THEME } from "../theme/Theme";
 import { DarkMode, ThemeContext } from "./ThemeContext";
 
-type Props = {
-  children?: React.ReactNode;
-};
+// type Props = {
+//   children?: React.ReactNode;
+// };
 
-export const ThemeProvider = (children: Props) => {
+export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const PreferDarkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [dark, setDark] = useState<DarkMode>(PreferDarkTheme);
 

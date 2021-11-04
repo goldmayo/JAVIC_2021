@@ -1,0 +1,8 @@
+@import "../../style/Colors.css";
+
+.theme__toggleBtn {
+  background-color: transparent;
+  border-style: none;
+  color: var(--header-text);
+  font-size: 4vh;
+}

@@ -3,7 +3,7 @@ import React, { useState, useLayoutEffect } from "react";
 import { LIGHT_THEME, DARK_THEME } from "../theme/Theme";
 import { DarkMode, ThemeContext } from "./ThemeContext";
 
-const strToBoolean = () => {
+const getLastTheme = (): boolean => {
   const str = window.localStorage.getItem("darkTheme");
   switch (str) {
     case "true":
@@ -14,20 +14,21 @@ const strToBoolean = () => {
       return window.matchMedia("(prefers-color-scheme: dark)").matches;
   }
 };
+
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const LastTheme = strToBoolean();
+  const LastTheme = getLastTheme();
   const [dark, setDark] = useState<DarkMode>(LastTheme);
 
   useLayoutEffect(() => {
-    applyTheme();
+    applyTheme(dark);
     return () => {
       console.log("change theme");
     };
   }, [dark]);
 
-  const applyTheme = () => {
+  const applyTheme = (darkMode: Boolean) => {
     let theme;
-    if (dark) {
+    if (darkMode) {
       theme = DARK_THEME;
     } else {
       theme = LIGHT_THEME;

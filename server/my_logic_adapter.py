@@ -35,6 +35,8 @@ class MyLogicAdapter(LogicAdapter):
             return self.initialize_vacation(service)
         elif (intent == 'cancel'):
             return api_frame.wrap_content("현재 진행중인 서비스가 존재하지 않습니다.")
+        elif (intent == 'yes'):
+            return api_frame.wrap_content("현재 진행중인 서비스가 존재하지 않습니다.")
         else: 
             print("other service")
             return api_frame.wrap_content("문의하신 내용에 대해 다음에는 안내드릴 수 있도록 열심히 학습하겠습니다.")

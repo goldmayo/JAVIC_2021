@@ -21,8 +21,8 @@
 }
 
 .confirmNode__button button:hover {
-  color: var(--server-btn-hover);
-  background-color: var(--send-btn-bg);
+  color: var(--server-btn-hover-text);
+  background-color: var(--server-btn-hover-bg);
 }
 
 @media screen and (max-width: 480px) {

@@ -20,15 +20,15 @@
 }
 
 .quickbtn button:hover {
-  color: var(--btn-hover-bg);
+  color: var(--btn-hover-text);
   font-weight: bold;
   background-color: var(--quick-btn-hover-bg);
-  border: 2px solid var(--btn-hover-bg);
+  /* border: 2px solid var(--btn-hover-text); */
 }
 
 .quickbtn button:active {
-  color: var(--btn-active-bg);
+  color: var(--btn-active-text);
   font-weight: bold;
-  background-color: var(--active-button-color);
-  border: 2px solid var(--btn-active-bg);
+  background-color: var(--btn-active-bg);
+  border: 2px solid var(--btn-active-text);
 }

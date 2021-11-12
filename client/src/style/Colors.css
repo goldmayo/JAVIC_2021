@@ -1,5 +1,7 @@
 :root {
-  --active-button-color: #007bff;
+  --btn-active-bg: #ffffff;
+  --btn-active-text: #007bff;
+  --btn-hover-text: #ffffff;
 
   --header-bg: #6495ed;
   --header-text: #e9ecef;
@@ -13,15 +15,13 @@
   --server-msg-border: #e9ecef;
   --server-btn: #000000;
   --server-btn-bg: #ffffff;
-  --server-btn-hover: #ffffff;
+  --server-btn-hover-text: #ffffff;
+  --server-btn-hover-bg: #6c757d;
 
   --user-msg-text: #ffffff;
   --user-msg-bg: #6495ed;
 
   --msg-time-stamp: #546e7a;
-
-  --btn-active-bg: #ffffff;
-  --btn-hover-bg: #ffffff;
 
   --footer-bg: #ffffff;
 
@@ -42,7 +42,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --active-button-color: #dee1ea;
+    --btn-active-bg: #dee1ea;
+    --btn-active-text: #007bff;
+    --btn-hover-text: #ffffff;
 
     --header-bg: #6495ed;
     --header-text: #e9ecef;
@@ -52,26 +54,23 @@
     --chat-menu-btn-bg: #6e7283;
 
     --server-msg-text: #ffffff;
-    /* --server-msg-bg: #828798; */
-    --server-msg-bg: #3c4043;
-    --server-msg-border: #6e7283;
+    --server-msg-bg: ##444655;
+    --server-msg-border: ##444655;
     --server-btn: #000000;
     --server-btn-bg: #ffffff;
-    --server-btn-hover: #ffffff;
+    --server-btn-hover-text: #ffffff;
+    --server-btn-hover-bg: #6495ed;
 
     --user-msg-text: #ffffff;
     --user-msg-bg: #6495ed;
 
     --msg-time-stamp: #ffffff;
 
-    --btn-active-bg: #007bff;
-    --btn-hover-bg: #6495ed;
-
     --footer-bg: #242731;
 
     --quick-btn-text: #ffffff;
     --quick-btn-bg: #6e7283;
-    --quick-btn-hover-bg: #c6c9d6;
+    --quick-btn-hover-bg: #6495ed;
     --quick-btn-container-bg: #242731;
 
     --input-text: #ffffff;

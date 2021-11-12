@@ -37,8 +37,8 @@
   border: 1px solid var(--server-msg-border);
 }
 .greetingNode__button button:hover {
-  color: var(--server-btn-hover);
-  background-color: var(--send-btn-bg);
+  color: var(--server-btn-hover-text);
+  background-color: var(--server-btn-hover-bg);
 }
 
 @media screen and (max-width: 480px) {

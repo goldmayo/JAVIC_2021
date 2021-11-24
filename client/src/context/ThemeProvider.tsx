@@ -35,6 +35,9 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     }
     const root = document.getElementsByTagName("html")[0];
     root.style.cssText = theme.join(";");
+
+    // const presudoroot = document.querySelector(":root");
+    // root.style.setProperty("", "");
   };
 
   const toggleTheme = () => {

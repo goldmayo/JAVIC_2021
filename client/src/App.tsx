@@ -12,8 +12,8 @@ import "./App.module.css";
 function App() {
   return (
     <ThemeProvider>
+      <Header />
       <ChatContextProvier>
-        <Header />
         <ChatContainer>
           <Chat />
         </ChatContainer>

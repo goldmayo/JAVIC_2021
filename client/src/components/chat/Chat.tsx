@@ -1,4 +1,4 @@
-import { useRef, useLayoutEffect, useEffect } from "react";
+import React, { useRef, useLayoutEffect, useEffect } from "react";
 import classNames from "classnames/bind";
 
 import { useChatState } from "../../context/ChatContextProvier";
@@ -48,9 +48,9 @@ function Chat() {
 
   useEffect(() => {
     console.log("new msg: ", ...chats);
-    return () => {
-      console.log("텅"); // 왜 찍히는 거냐 복사하는건데..
-    };
+    // return () => {
+    //   console.log("텅");
+    // };
   }, [chats]);
 
   const msg = chats.map((message, i) => (
@@ -68,7 +68,7 @@ function Chat() {
 
   return (
     <>
-      <Greeting />
+      {/* <Greeting /> */}
       {msg}
       <div ref={endOfChat}></div>
     </>

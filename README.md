@@ -27,7 +27,7 @@ Flux Pattern
   - Back-end : Python3, virtualenv
 - Client :
   - Typescript
-  - React
+  - React hooks
   - Context API
   - CSS module
 - Chatbot :

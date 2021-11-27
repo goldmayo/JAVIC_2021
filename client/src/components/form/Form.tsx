@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { useChatDispatch } from "../../context/ChatContextProvier";
 import { userMessage, sendMessage } from "../../actions/ChatActions";
 import classNames from "classnames/bind";
@@ -43,4 +43,4 @@ function Form() {
   );
 }
 
-export default Form;
+export default React.memo(Form);

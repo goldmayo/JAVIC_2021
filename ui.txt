@@ -55,3 +55,6 @@
 :root presudo element 선택하여 중복 제거하기
 
 chat 메모이제이션하기
+form,chat 최적화
+form > send btn분리, 퀵버튼 분리
+chat > ?

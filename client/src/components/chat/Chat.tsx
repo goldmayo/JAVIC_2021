@@ -2,7 +2,6 @@ import React, { useRef, useLayoutEffect, useEffect } from "react";
 import classNames from "classnames/bind";
 
 import { useChatState } from "../../context/ChatContextProvier";
-import Greeting from "./Greeting";
 import BotProfile from "../profile/BotProfile";
 
 import styles from "./Chat.module.css";
@@ -47,12 +46,16 @@ function Chat() {
   const chats = useChatState();
 
   useEffect(() => {
-    console.log("new msg: ", ...chats);
-    // return () => {
-    //   console.log("텅");
-    // };
+    if (chats.length === 0) {
+      console.log("empty chats");
+    } else {
+      console.log("new msg: ", ...chats);
+    }
   }, [chats]);
 
+  // chats의 가장 마지막 원소만 msg 함수 실행하고 또 다른 배열에 저장해 놓는 법
+  // 새로운 chats만 더해주면 되는거지.
+  // react-virtualized 알아보기
   const msg = chats.map((message, i) => (
     <div className={cx("chatnode")} key={i}>
       {message.who === "user"
@@ -68,7 +71,6 @@ function Chat() {
 
   return (
     <>
-      {/* <Greeting /> */}
       {msg}
       <div ref={endOfChat}></div>
     </>

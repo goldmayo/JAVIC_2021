@@ -7,7 +7,7 @@ export type Chat = {
   time: string;
 };
 
-type ChatState = Chat[];
+export type ChatState = Chat[];
 
 export const ChatContext = createContext<ChatState | undefined>(undefined);
 

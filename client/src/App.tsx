@@ -2,7 +2,7 @@ import Header from "./components/Header";
 import ChatContainer from "./components/ChatContainer";
 import Footer from "./components/Footer";
 import Form from "./components/form/Form";
-import Chat from "./components/chat/Chat";
+import ChatList from "./components/chat/ChatList";
 import QuickButton from "./components/button/QuickButton";
 import { ChatContextProvier } from "./context/ChatContextProvier";
 import { ThemeProvider } from "./context/ThemeProvider";
@@ -15,7 +15,7 @@ function App() {
       <Header />
       <ChatContextProvier>
         <ChatContainer>
-          <Chat />
+          <ChatList />
         </ChatContainer>
         <Footer>
           <QuickButton />

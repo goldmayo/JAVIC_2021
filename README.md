@@ -43,6 +43,13 @@ Flux Pattern
 
 ---
 
+### Rendering 최적화
+
+// 추가예정
+<img src="/client/public/images/before_optimization.PNG" alt="before optimization">
+
+---
+
 ### Run Project
 
 Dependency install

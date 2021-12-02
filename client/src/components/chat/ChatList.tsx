@@ -1,6 +1,13 @@
-import React, { useRef, useLayoutEffect, useEffect, useState } from "react";
+import { useRef, useLayoutEffect, useEffect } from "react";
 import classNames from "classnames/bind";
-import { List, AutoSizer, CellMeasurer, CellMeasurerCache, ListRowProps } from "react-virtualized";
+// import {
+//   WindowScroller,
+//   List,
+//   AutoSizer,
+//   CellMeasurer,
+//   CellMeasurerCache,
+//   ListRowProps,
+// } from "react-virtualized";
 
 import { useChatState } from "../../context/ChatContextProvier";
 import { Chat } from "../../context/ChatContext";
@@ -8,29 +15,24 @@ import ServerChat from "./ServerChat";
 import UserChat from "./UserChat";
 
 import styles from "./Chat.module.css";
-
 const cx = classNames.bind(styles);
 
-const addChatMsg = (newMsg: Chat, newId: number): React.ReactElement => {
-  return (
-    <div className={cx("chatnode")} key={newId}>
-      {newMsg.who === "user" ? (
-        <UserChat who={newMsg.who} content={newMsg.content} time={newMsg.time} />
-      ) : (
-        <ServerChat who={newMsg.who} content={newMsg.content} time={newMsg.time} />
-      )}
-    </div>
-  );
-};
+// const addChatMsg = (newMsg: Chat, newId: number): React.ReactElement => {
+//   return (
+//     <div className={cx("chatnode")} key={newId}>
+//       {newMsg.who === "user" ? (
+//         <UserChat who={newMsg.who} content={newMsg.content} time={newMsg.time} />
+//       ) : (
+//         <ServerChat who={newMsg.who} content={newMsg.content} time={newMsg.time} />
+//       )}
+//     </div>
+//   );
+// };
 
 function ChatList() {
   const endOfChat = useRef<HTMLDivElement>(null);
   const chats = useChatState();
-  //
-  const rowRenderer = ({ index, key, parent, style }: ListRowProps) => {};
-  const addChattings = () => {};
 
-  //
   useEffect(() => {
     if (chats.length === 0) {
       console.log("empty chats");
@@ -59,19 +61,9 @@ function ChatList() {
     endOfChat.current?.scrollIntoView({ behavior: "smooth" });
   };
   useLayoutEffect(scrollToBottom, [chats]);
-
   return (
     <>
       {msg}
-      {/* /  */}
-      {/* <div style={{ width: "100%", height: "81vh" }}>
-        <AutoSizer>
-          {({ width, height }) => (
-            <List width={width} height={height} rowCount={chats.length} rowHeight={} rowRenderer={rowRenderer} />
-          )}
-        </AutoSizer>
-      </div> */}
-      {/*  */}
       <div ref={endOfChat}></div>
     </>
   );

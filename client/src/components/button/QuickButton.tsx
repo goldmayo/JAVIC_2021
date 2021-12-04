@@ -13,4 +13,4 @@ function QuickButton() {
   );
 }
 
-export default QuickButton;
+export default React.memo(QuickButton);

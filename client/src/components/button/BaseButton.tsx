@@ -1,3 +1,4 @@
+import React from "react";
 import { useChatDispatch } from "../../context/ChatContextProvier";
 import { userMessage, sendMessage } from "../../actions/ChatActions";
 import { IconType } from "react-icons";
@@ -16,8 +17,8 @@ function BaseButton({ name, icon }: ButtonProps) {
   const dispatch = useChatDispatch();
 
   const handleClick = () => {
-    userMessage(name, dispatch);
     sendMessage(name, dispatch);
+    userMessage(name, dispatch);
   };
 
   return (
@@ -27,4 +28,4 @@ function BaseButton({ name, icon }: ButtonProps) {
     </button>
   );
 }
-export default BaseButton;
+export default React.memo(BaseButton);

@@ -15,8 +15,8 @@ function Form() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    userMessage(message, dispatch);
     sendMessage(message, dispatch);
+    userMessage(message, dispatch);
     setMessage("");
   };
 

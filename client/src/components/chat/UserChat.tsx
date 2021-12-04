@@ -20,4 +20,4 @@ function UserChat({ who, content, time }: Chat) {
   );
 }
 
-export default UserChat;
+export default React.memo(UserChat);

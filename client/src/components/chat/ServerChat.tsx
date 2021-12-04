@@ -22,4 +22,4 @@ function ServerChat({ who, content, time }: Chat) {
   );
 }
 
-export default ServerChat;
+export default React.memo(ServerChat);

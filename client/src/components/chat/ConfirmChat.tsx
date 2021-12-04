@@ -24,4 +24,4 @@ function ConfirmChat({ message }: IConfirmChat) {
   );
 }
 
-export default ConfirmChat;
+export default React.memo(ConfirmChat);

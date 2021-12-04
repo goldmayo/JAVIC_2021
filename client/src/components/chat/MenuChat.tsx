@@ -24,4 +24,4 @@ function MenuChat() {
   );
 }
 
-export default MenuChat;
+export default React.memo(MenuChat);

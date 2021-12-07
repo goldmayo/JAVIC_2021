@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { useChatDispatch } from "../../context/ChatContextProvier";
 import { userMessage, sendMessage } from "../../actions/ChatActions";
 import classNames from "classnames/bind";
@@ -13,12 +13,15 @@ function Form() {
   const [message, setMessage] = useState("");
   const dispatch = useChatDispatch();
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    sendMessage(message, dispatch);
-    userMessage(message, dispatch);
-    setMessage("");
-  };
+  const handleSubmit = useCallback(
+    (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      sendMessage(message, dispatch);
+      userMessage(message, dispatch);
+      setMessage("");
+    },
+    [message, dispatch]
+  );
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setMessage(e.target.value);

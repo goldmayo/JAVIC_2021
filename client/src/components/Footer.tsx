@@ -7,4 +7,4 @@ type Props = {
 function Footer({ children }: Props) {
   return <footer className={styles.inputContainer}>{children}</footer>;
 }
-export default Footer;
+export default React.memo(Footer);

@@ -8,4 +8,4 @@ function BotProfile() {
   );
 }
 
-export default BotProfile;
+export default React.memo(BotProfile);

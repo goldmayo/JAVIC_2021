@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { useChatDispatch } from "../../context/ChatContextProvier";
 import { userMessage, sendMessage } from "../../actions/ChatActions";
 import { IconType } from "react-icons";
@@ -16,10 +16,10 @@ interface ButtonProps {
 function BaseButton({ name, icon }: ButtonProps) {
   const dispatch = useChatDispatch();
 
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     sendMessage(name, dispatch);
     userMessage(name, dispatch);
-  };
+  }, [name, dispatch]);
 
   return (
     <button type="button" onClick={handleClick}>

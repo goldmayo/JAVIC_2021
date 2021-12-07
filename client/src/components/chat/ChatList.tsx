@@ -10,7 +10,6 @@ import classNames from "classnames/bind";
 // } from "react-virtualized";
 
 import { useChatState } from "../../context/ChatContextProvier";
-import { Chat } from "../../context/ChatContext";
 import ServerChat from "./ServerChat";
 import UserChat from "./UserChat";
 

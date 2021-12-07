@@ -14,4 +14,4 @@ function ChatContainer({ children }: ChatContainerProps) {
     </section>
   );
 }
-export default ChatContainer;
+export default React.memo(ChatContainer);

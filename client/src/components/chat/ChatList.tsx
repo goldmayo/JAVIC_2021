@@ -12,21 +12,24 @@ import classNames from "classnames/bind";
 import { useChatState } from "../../context/ChatContextProvier";
 import ServerChat from "./ServerChat";
 import UserChat from "./UserChat";
-
+import ThreeDotsLoader from "../loader/ThreeDotsLoader";
 import styles from "./Chat.module.css";
 const cx = classNames.bind(styles);
 
 function ChatList() {
   const endOfChat = useRef<HTMLDivElement>(null);
   const chats = useChatState();
+  const isLoading = chats[chats.length - 1]?.loading;
 
   useEffect(() => {
     if (chats.length === 0) {
       console.log("empty chats");
     } else {
+      console.log(isLoading);
+
       console.log("new msg: ", ...chats);
     }
-  }, [chats]);
+  }, [chats, isLoading]);
 
   // chats의 가장 마지막 원소만 msg 함수 실행하고 또 다른 배열에 저장해 놓는 법
   // 새로운 chats만 더해주면 되는거지.
@@ -38,20 +41,33 @@ function ChatList() {
   const msg = chats.map((message, i) => (
     <div className={cx("chatnode")} key={i}>
       {message.who === "user" ? (
-        <UserChat who={message.who} content={message.content} time={message.time} />
+        <UserChat
+          who={message.who}
+          content={message.content}
+          time={message.time}
+          loading={message.loading}
+        />
       ) : (
-        <ServerChat who={message.who} content={message.content} time={message.time} />
+        <ServerChat
+          who={message.who}
+          content={message.content}
+          time={message.time}
+          loading={message.loading}
+        />
       )}
     </div>
-  ));
+  )); // 로딩 만들기
 
   const scrollToBottom = () => {
     endOfChat.current?.scrollIntoView({ behavior: "smooth" });
   };
   useLayoutEffect(scrollToBottom, [chats]);
+
   return (
     <>
       {msg}
+      {isLoading ? <ThreeDotsLoader /> : ""}
+
       <div ref={endOfChat}></div>
     </>
   );

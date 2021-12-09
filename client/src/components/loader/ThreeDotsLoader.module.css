@@ -1,0 +1,20 @@
+@import "../../style/Colors.css";
+.chatnode {
+  margin: 0 1rem 1rem 1rem;
+}
+.loadingNode {
+  max-width: 75%;
+  float: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.loadingNode__content {
+  float: left;
+  background-color: var(--server-msg-bg);
+  border-radius: 30px 30px 30px 30px;
+  border: 1px solid var(--server-msg-border);
+  margin-top: 0.2rem;
+  padding: 0px 13px 0px 13px;
+  /* 보더 작업 */
+}

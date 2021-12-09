@@ -6,6 +6,9 @@
   display: flex;
   flex-direction: column;
   background-color: var(--chat-container-bg);
+  /*  for firefox*/
+  scrollbar-color: var(--chat-container-scrollbar-bg);
+  scrollbar-width: thin;
 }
 
 .chatcontainer:hover {

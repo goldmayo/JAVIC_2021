@@ -20,6 +20,7 @@ export const userMessage = (message: string, callback: ChatDispatch) => {
       who: "user",
       text: message,
       time: currentClientTime,
+      loading: true,
     });
   } catch (error) {
     console.error(error);
@@ -37,6 +38,7 @@ export async function sendMessage(message: string, callback: ChatDispatch) {
         who: "server",
         text: <MenuChat />,
         time: currentClientTime,
+        loading: false,
       });
     }, 600);
   let result: IResponseFromServer;
@@ -55,16 +57,18 @@ export async function sendMessage(message: string, callback: ChatDispatch) {
     if (result.header.message_type === "confirm") {
       callback({
         type: "MSESSAGE_SUCCESS",
-        from: result.header.who,
+        who: result.header.who,
         text: <ConfirmChat message={result.content} />,
         time: serverTime,
+        loading: false,
       });
     } else {
       callback({
         type: "MSESSAGE_SUCCESS",
-        from: result.header.who,
+        who: result.header.who,
         text: result.content,
         time: serverTime,
+        loading: false,
       });
     }
   } catch (error) {

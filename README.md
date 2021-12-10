@@ -2,7 +2,7 @@
 
 <img alt="PyPI - License" src="https://img.shields.io/pypi/l/chatterbot">
 
-[2019-2020에 진행한 산학 협력 캡스톤 디자인 프로젝트](https://github.com/goldmayo/CapstoneProject-JAVIC)에서 Front-end를 React로 Back-end를 리팩토링한 프로젝트입니다.
+[2019-2020에 진행한 산학 협력 캡스톤 디자인 프로젝트](https://github.com/goldmayo/CapstoneProject-JAVIC)에서 Front-end를 React로 변경하고, Back-end를 리팩토링한 프로젝트입니다.
 
 ### 개발 목적
 

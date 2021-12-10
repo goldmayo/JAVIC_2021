@@ -23,6 +23,7 @@ class MyLogicAdapter(LogicAdapter):
         self.__classifier = NaiveBayesClassifier() # 나이브 베이즈 모델
         self._service_box = ServiceBox() # 서비스
         self.__intentList = self.__classifier.get_labels()
+        self.intent = "none"
 
     def __del__(self):
         print("MLAClass is deleted!")
@@ -120,16 +121,16 @@ class MyLogicAdapter(LogicAdapter):
         True를 반환하여 my_service_logic_adapter의 process 함수가 실행된다.
         """
         # 서비스 중
+        self.intent = self.decide_intent(statement.text)
         if(self._service_box.has_service()):
             print("service is on")
             return True
         else:
             # 사용자 입력의 의도가 서비스 목록에 있을 경우 실행
-            intent = self.__classifier.get_predict(statement.text)
-            print("intent : ",intent)
+            print("intent : ",self.intent)
             print("labels : ",self.__intentList) 
-            if intent in self.__intentList:
-                print("IntentPredict :",intent)
+            if self.intent in self.__intentList:
+                print("IntentPredict :",self.intent)
                 print("CanProcess() : true")
                 return True
             else:
@@ -147,10 +148,10 @@ class MyLogicAdapter(LogicAdapter):
     #     "\n> search_in_response_to :",statement.search_in_response_to)
     #     print("------------------------------\n")
 
-    def process(self, input_statement, additional_response_selection_parameters):
+    def process(self, input_statement):
         selected_statement = input_statement
         selected_statement.confidence = 1 #confidence
-        intent = self.decide_intent(input_statement.text)
+        intent = self.intent
         if self._service_box.has_service(): # 서비스가 실행중인 경우
             selected_statement.text = self.handle_ongoing_service(intent,input_statement)
         else: # 실행중인 서비스가 없는 경우

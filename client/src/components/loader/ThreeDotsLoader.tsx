@@ -15,4 +15,4 @@ function ThreeDotsLoader() {
   );
 }
 
-export default ThreeDotsLoader;
+export default React.memo(ThreeDotsLoader);

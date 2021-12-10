@@ -56,7 +56,7 @@ function ChatList() {
         />
       )}
     </div>
-  )); // 로딩 만들기
+  ));
 
   const scrollToBottom = () => {
     endOfChat.current?.scrollIntoView({ behavior: "smooth" });
@@ -67,7 +67,6 @@ function ChatList() {
     <>
       {msg}
       {isLoading ? <ThreeDotsLoader /> : ""}
-
       <div ref={endOfChat}></div>
     </>
   );

@@ -4,7 +4,7 @@ class ServiceBox(object):
         self._now_service = None
 
     def __del__(self):
-        print("SB Class is deleted!")        
+        print(f'SB({id(self)}) Class is deleted!')        
 
     def add_service(self,new_service):# 서비스 추가
         self._now_service = new_service

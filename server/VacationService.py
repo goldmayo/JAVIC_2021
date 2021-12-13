@@ -25,7 +25,7 @@ class VacationService(IOngoingPacket):
             -1:"날짜형식이 올바르지 않습니다. 다시 입력해주세요."
             }
     def __del__(self):
-        print("RRClass is deleted!")
+        print(f'VacationServiceClass({id(self)}) is deleted!')
 
     def get_data(self):
         return (self.__start_date, self.__end_date, self.__request_status)
@@ -124,9 +124,9 @@ class VacationService(IOngoingPacket):
                 self.put_current_response(input_statement.text)
                 if self.has_next(): #실행구역
                     if self.get_next_as_number() == 3: #유저가 네 라고하면 
-                        return api_frame.wrap_content(str(self.__start_date)+"부터 "+str(self.__end_date)+"까지 휴가를 신청하시겠습니까?",type="confirm") # 다음 입력 메세지
+                        return str(self.__start_date)+"부터 "+str(self.__end_date)+"까지 휴가를 신청하시겠습니까?","confirm" # 다음 입력 메세지
                     else:
-                        return api_frame.wrap_content(self.get_next()) # 다음 입력 메세지
+                        return self.get_next() # 다음 입력 메세지
                 else:
 
                     # ###
@@ -138,15 +138,15 @@ class VacationService(IOngoingPacket):
                     #     """
                     if self.__agreement == True:
                         # return Draft_Vacation(self.__start_date,self.__end_date)
-                        return api_frame.wrap_content(str(self.__start_date)+"부터 "+str(self.__end_date)+"까지 휴가를 신청하였습니다.",type="confirm"),True # 다음 입력 메세지
+                        return str(self.__start_date)+"부터 "+str(self.__end_date)+"까지 휴가를 신청하였습니다.","end" # 다음 입력 메세지
 
                     else:
-                        return api_frame.wrap_content("휴가신청을 취소합니다."),True
+                        return "휴가신청을 취소합니다.","end"
             else:
-                return api_frame.wrap_content(self.resend_request_msg())           
+                return self.resend_request_msg()         
         else: # <__start_date, __end_date, confirm(y/n) 모두 충족>
             if self.__agreement:
                 # return  Draft_Vacation(self.__start_date,self.__end_date)
-                return api_frame.wrap_content(str(self.__start_date)+"부터 "+str(self.__end_date)+"까지 휴가를 신청하였습니다."),True # 다음 입력 메세지
+                return str(self.__start_date)+"부터 "+str(self.__end_date)+"까지 휴가를 신청하였습니다.","end" # 다음 입력 메세지
             else:
-                return api_frame.wrap_content("휴가신청을 취소합니다."), True
+                return "휴가신청을 취소합니다.","end"

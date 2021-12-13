@@ -52,9 +52,19 @@ export async function sendMessage(message: string, callback: ChatDispatch) {
     console.log("serverTime", serverTime);
 
     result = response?.data;
-    console.log(result);
+    console.log("result :", result);
+    // switch (result.header.message_type) {
+    //   case "confirm":
 
-    if (result.header.message_type === "confirm") {
+    //     break;
+    //   case "plain":
+
+    //     break;
+
+    //   default:
+    //     break;
+    // }
+    if (result.header?.message_type === "confirm") {
       callback({
         type: "MSESSAGE_SUCCESS",
         who: result.header.who,

@@ -26,7 +26,6 @@ function ChatList() {
       console.log("empty chats");
     } else {
       console.log(isLoading);
-
       console.log("new msg: ", ...chats);
     }
   }, [chats, isLoading]);

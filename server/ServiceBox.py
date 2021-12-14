@@ -1,6 +1,8 @@
 class ServiceBox(object):
+    service_list = {}
     def __init__(self):
         print(f'this is SB id : {id(self)}')
+
         self._now_service = None
 
     def __del__(self):
@@ -22,3 +24,19 @@ class ServiceBox(object):
             return tmp
         else:
             pass
+
+    def __add_service_list__(self,new_service,client_id):
+        self.service_list[client_id] = new_service
+    
+    def __remove_service_list__(self,client_id):
+        del self.service_list[client_id]
+    
+    def __get_service_list__(self,client_id):
+        if client_id not in self.service_list.keys():
+            raise KeyError
+        return self.service_list[client_id]
+
+    def __set_service_list__(self,client_id,new_service):
+        if client_id not in self.service_list.keys():
+            raise KeyError
+        self.service_list[client_id] = new_service

@@ -7,22 +7,27 @@ import QuickButton from "./components/button/QuickButton";
 import { ChatContextProvier } from "./context/ChatContextProvier";
 import { ThemeProvider } from "./context/ThemeProvider";
 
+import { BrowserRouter } from "react-router-dom";
+// import Router from "./Router";
+
 import "./App.module.css";
 
 function App() {
   return (
-    <ThemeProvider>
-      <Header />
-      <ChatContextProvier>
-        <ChatContainer>
-          <ChatList />
-        </ChatContainer>
-        <Footer>
-          <QuickButton />
-          <Form />
-        </Footer>
-      </ChatContextProvier>
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider>
+        <Header />
+        <ChatContextProvier>
+          <ChatContainer>
+            <ChatList />
+          </ChatContainer>
+          <Footer>
+            <QuickButton />
+            <Form />
+          </Footer>
+        </ChatContextProvier>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 

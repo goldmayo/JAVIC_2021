@@ -1,24 +1,23 @@
-from flask import Flask, render_template, request
-from chatbot import JAVIC
-import common_api_frame as api_frame
+from flask import Flask , render_template
+from flask_restful import Api
+
+from api.handle_bot_response import Chatbot
+from api.handle_login import Login
+
 app = Flask(__name__)
+api = Api(app)
 
-@app.route('/',methods=['GET', 'POST'])
-def chatbot():
-        return render_template('chatbot.html')
+api.add_resource(Chatbot, '/bot')
+api.add_resource(Login, '/login')
+# app.register_blueprint(Chatbot.app)
 
-@app.route("/bot",methods=['POST'])
-def get_bot_response():
-    req = request.get_json()
-    print("\n> Client reqest:",req)
-    botResponse = JAVIC.get_response(req["text"])
-    print("botResponse:",botResponse)
-    appResponse = app.make_response(botResponse.text)
-    appResponse.mimetype="application/json"
-    print("\n>Server response :",appResponse)
-    return appResponse
-@app.route("/login",methods=['POST','GET'])
-def show_login():
+# @app.route('/',methods=['GET', 'POST'])
+# def chatbot():
+#         return render_template('chatbot.html')
+
+@app.route("/",methods=['POST','GET'])
+def handle_login():
     return render_template('login.html')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0',debug=True, port=7000)

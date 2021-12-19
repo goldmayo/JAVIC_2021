@@ -1,6 +1,10 @@
 import React from "react";
-import styles from "./ChatContainer.module.css";
 import Greeting from "./chat/Greeting";
+import classNames from "classnames/bind";
+
+import styles from "./ChatContainer.module.css";
+
+const cx = classNames.bind(styles);
 
 type ChatContainerProps = {
   children?: React.ReactNode;
@@ -8,7 +12,7 @@ type ChatContainerProps = {
 
 function ChatContainer({ children }: ChatContainerProps) {
   return (
-    <section className={styles.chatcontainer}>
+    <section className={cx("chatContainer")}>
       <Greeting />
       {children}
     </section>

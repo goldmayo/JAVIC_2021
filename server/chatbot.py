@@ -1,7 +1,8 @@
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 
-import common_api_frame as api_frame
+# import common_api_frame as api_frame
+
 print("javic loading...")
 JAVIC = ChatBot(
     'JAVIC',

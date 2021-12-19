@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import classNames from "classnames/bind";
+
+import LoginForm from "../components/form/LoginForm";
+
+import styles from "./LoginPage.module.css";
+
+const cx = classNames.bind(styles);
 
 function LoginPage() {
-  return <div></div>;
+  return (
+    <div className={cx("LoginContainer")}>
+      <h2>WELCOME</h2>
+      <LoginForm />
+    </div>
+  );
 }
 
-export default LoginPage;
+export default React.memo(LoginPage);

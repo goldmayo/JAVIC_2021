@@ -1,6 +1,6 @@
 @import "../style/Colors.css";
 
-.chatcontainer {
+.chatContainer {
   height: 81vh;
   overflow: hidden;
   display: flex;
@@ -11,7 +11,7 @@
   scrollbar-width: thin;
 }
 
-.chatcontainer:hover {
+.chatContainer:hover {
   overflow-y: auto;
 }
 ::-webkit-scrollbar {

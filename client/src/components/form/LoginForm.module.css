@@ -9,6 +9,7 @@
   align-items: center;
   background-color: none;
 }
+
 .idContainer {
   width: 90%;
   display: flex;
@@ -18,6 +19,12 @@
   border-bottom: 2px solid #d9d9d9;
 }
 
+.idContainer:focus-within {
+  border-bottom: 2px solid var(--quick-btn-hover-bg);
+}
+.idContainer:focus-within svg {
+  color: #4b66fb;
+}
 .pwContainer {
   width: 90%;
   display: flex;
@@ -27,6 +34,12 @@
   border-bottom: 2px solid #d9d9d9;
 }
 
+.pwContainer:focus-within {
+  border-bottom: 2px solid var(--quick-btn-hover-bg);
+}
+.pwContainer:focus-within svg {
+  color: #4b66fb;
+}
 .LoginFormContainer svg {
   color: #555;
   flex-basis: 10%;
@@ -41,10 +54,6 @@
   border: none;
   outline: none;
   color: #555;
-}
-
-.LoginFormContainer input:focus {
-  border-bottom: 2px solid var(--quick-btn-hover-bg);
 }
 
 .LoginFormContainer button {

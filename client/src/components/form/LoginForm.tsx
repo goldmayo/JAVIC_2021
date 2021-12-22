@@ -8,14 +8,14 @@ const cx = classNames.bind(styles);
 
 function LoginForm() {
   const [inputs, setInputs] = useState({
-    id: "",
+    email: "",
     password: "",
   });
 
-  const { id, password } = inputs;
+  const { email, password } = inputs;
 
   useEffect(() => {
-    console.log("id : ", inputs["id"]);
+    console.log("email : ", inputs["email"]);
     console.log("pw : ", inputs["password"]);
   }, [inputs]);
 
@@ -32,7 +32,7 @@ function LoginForm() {
   const onSubmit = useCallback((e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setInputs({
-      id: "",
+      email: "",
       password: "",
     });
   }, []);
@@ -40,15 +40,15 @@ function LoginForm() {
   return (
     <div className={cx("LoginFormContainer")}>
       <form autoComplete="off" onSubmit={onSubmit}>
-        <div className={cx("idContainer")}>
+        <div className={cx("emailContainer")}>
           <FaUser size={"2vh"} />
           <input
-            name="id"
+            name="email"
             type="text"
-            value={id}
+            value={email}
             required
             onChange={onChange}
-            placeholder="Username"
+            placeholder="이메일"
           />
         </div>
         <div className={cx("pwContainer")}>
@@ -59,11 +59,18 @@ function LoginForm() {
             value={password}
             required
             onChange={onChange}
-            placeholder="Password"
+            placeholder="비밀번호"
           />
+        </div>
+        <div className={cx("forgetContainer")}>
+          <span>이메일 또는 비밀번호 찾기</span>
         </div>
         <button type="submit">로그인</button>
       </form>
+      <div className={cx("registerContainer")}>
+        <span>아직 계정이 없으신가요?</span>&emsp;
+        <span className={cx("registerLink")}>회원가입</span>
+      </div>
     </div>
   );
 }

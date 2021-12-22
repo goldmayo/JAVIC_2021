@@ -1,8 +1,12 @@
 @import "../../style/Colors.css";
 
-.LoginFormContainer form {
-  height: 25vh;
+.LoginFormContainer {
+  border: 2px solid red;
   width: 25vw;
+  height: 25vh;
+}
+.LoginFormContainer form {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -10,7 +14,7 @@
   background-color: none;
 }
 
-.idContainer {
+.emailContainer {
   width: 90%;
   display: flex;
   flex-direction: row;
@@ -19,11 +23,11 @@
   border-bottom: 2px solid #d9d9d9;
 }
 
-.idContainer:focus-within {
+.emailContainer:focus-within {
   border-bottom: 2px solid var(--quick-btn-hover-bg);
 }
-.idContainer:focus-within svg {
-  color: #4b66fb;
+.emailContainer:focus-within svg {
+  color: #288fff;
 }
 .pwContainer {
   width: 90%;
@@ -38,8 +42,19 @@
   border-bottom: 2px solid var(--quick-btn-hover-bg);
 }
 .pwContainer:focus-within svg {
-  color: #4b66fb;
+  color: #288fff;
 }
+
+.forgetContainer span {
+  color: #555;
+  cursor: pointer;
+}
+
+.forgetContainer span:hover {
+  color: #4b66fb;
+  text-decoration: underline;
+}
+
 .LoginFormContainer svg {
   color: #555;
   flex-basis: 10%;
@@ -64,12 +79,7 @@
   font-size: 2vh;
   line-height: 1vh;
   border-radius: 25px;
-  background-image: linear-gradient(
-    to right,
-    var(--quick-btn-hover-bg),
-    var(--btn-active-text),
-    #4b66fb
-  );
+  background-color: #007bff;
   background-size: 200%;
   color: #fff;
   cursor: pointer;
@@ -77,10 +87,22 @@
 }
 
 .LoginFormContainer button:hover {
-  background-position: right;
+  background-color: #006ee6;
 }
 
 ::placeholder {
   color: #999;
   font-size: 2vh;
+}
+
+.registerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+}
+
+.registerLink {
+  color: black;
+  cursor: pointer;
 }

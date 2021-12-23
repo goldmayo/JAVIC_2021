@@ -1,7 +1,46 @@
-.LoginContainer {
+body {
+  display: flex;
+  justify-content: center;
+}
+.loginPageContainer {
   height: 100vh;
   width: 100vw;
-  /* background-image: url("../images/layered-waves-haikei.png");
-  background-repeat: no-repeat;
-  background-size: cover; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+.loginGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: beige;
+}
+
+.formGroup {
+  height: 90vh;
+  flex-basis: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: cadetblue;
+}
+
+.formTitle {
+  text-align: center;
+  color: #555;
+  font-size: 2vh;
+  padding: 2em;
+}
+
+.socialLoginGroup {
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bannerGroup {
 }

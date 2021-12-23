@@ -1,0 +1,28 @@
+.googleLoginButton {
+  line-height: 2vh;
+}
+.socialLoginButton {
+  height: 5vh;
+  width: 90%;
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  background-color: #007bff;
+  font-size: 2vh;
+  transition: 0.5s;
+  line-height: 1vh;
+  padding: 1px 2px;
+}
+.socialLoginButton:hover {
+  background-color: #006ee6;
+}
+
+.buttonIcon {
+  margin: 1vw;
+}
+
+.buttonName {
+  margin: 1vw;
+}

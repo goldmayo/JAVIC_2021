@@ -8,7 +8,7 @@ import { ChatContextProvier } from "./context/ChatContextProvier";
 import { ThemeProvider } from "./context/ThemeProvider";
 
 import LoginPage from "./pages/LoginPage";
-
+import ChatBotPage from "./pages/ChatBotPage";
 import { BrowserRouter } from "react-router-dom";
 // import Router from "./Router";
 
@@ -16,7 +16,8 @@ import "./App.module.css";
 
 function App() {
   return (
-    <LoginPage />
+    // <LoginPage />
+    <ChatBotPage />
     // <BrowserRouter>
     //   <ThemeProvider>
     //     <Header />

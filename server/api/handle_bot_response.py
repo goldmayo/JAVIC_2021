@@ -1,5 +1,6 @@
-from flask import request ,Blueprint, make_response
+from flask import request , make_response
 from flask_restful import Resource
+
 from chatbot import JAVIC
 
 # app = Blueprint('bot_response',__name__)

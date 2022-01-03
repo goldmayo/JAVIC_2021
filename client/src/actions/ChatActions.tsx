@@ -2,6 +2,7 @@ import axios from "axios";
 import { ChatDispatch } from "../context/ChatContext";
 import MenuChat from "../components/chat/MenuChat";
 import ConfirmChat from "../components/chat/ConfirmChat";
+import React from "react";
 
 interface IResponseFromServer {
   header: {
@@ -29,7 +30,16 @@ export const userMessage = (message: string, callback: ChatDispatch) => {
     });
   }
 };
-
+function sendServer(message: string, callback: ChatDispatch) {
+  const socket = new WebSocket("ws://192.168.45.236:7000/bot");
+  let userMsg = {
+    text: `${message}`,
+  };
+  socket.onopen = function (event: any) {
+    socket.send(JSON.stringify(userMsg));
+  };
+  // socket.onmessage = function(event:WebSocketEventMap)
+}
 export async function sendMessage(message: string, callback: ChatDispatch) {
   if (message === "메뉴")
     return setTimeout(() => {

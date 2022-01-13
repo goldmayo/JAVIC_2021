@@ -30,3 +30,5 @@ __pycache__
 test.py
 database.db
 run.sh
+
+client/.env

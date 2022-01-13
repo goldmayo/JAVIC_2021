@@ -3,6 +3,7 @@ import { ChatDispatch } from "../context/ChatContext";
 import MenuChat from "../components/chat/MenuChat";
 import ConfirmChat from "../components/chat/ConfirmChat";
 import React from "react";
+import { WebSocketState } from "../context/WebsocketContext";
 
 interface IResponseFromServer {
   header: {
@@ -30,15 +31,84 @@ export const userMessage = (message: string, callback: ChatDispatch) => {
     });
   }
 };
-function sendServer(message: string, callback: ChatDispatch) {
-  const socket = new WebSocket("ws://192.168.45.236:7000/bot");
-  let userMsg = {
-    text: `${message}`,
-  };
-  socket.onopen = function (event: any) {
-    socket.send(JSON.stringify(userMsg));
-  };
-  // socket.onmessage = function(event:WebSocketEventMap)
+
+function sendWebSocket(webSocket: WebSocketState, message: string): Promise<[IResponseFromServer, number]> {
+  const ws = webSocket?.current;
+  return new Promise((resolve, reject) => {
+    const onOpen = () => {
+      let userMsg = {
+        text: `${message}`,
+      };
+      ws?.send(JSON.stringify(userMsg));
+    };
+    const onMessage = (event: MessageEvent) => {
+      const data: IResponseFromServer = JSON.parse(event.data);
+      const timestamp: number = event.timeStamp;
+      ws?.removeEventListener("message", onMessage);
+      resolve([data, timestamp]);
+    };
+    ws?.addEventListener("message", onMessage);
+    switch (ws?.readyState) {
+      case ws?.CONNECTING:
+        ws?.addEventListener("open", onOpen);
+        break;
+      case ws?.OPEN:
+        onOpen();
+        break;
+      case ws?.CLOSING:
+      case ws?.CLOSED:
+        reject();
+        break;
+    }
+  });
+}
+export async function sendMessageToWebSocket(webSocket: WebSocketState, message: string, callback: ChatDispatch) {
+  if (message === "메뉴")
+    return setTimeout(() => {
+      callback({
+        type: "IPUT_SUCCESS",
+        who: "server",
+        text: <MenuChat />,
+        time: currentClientTime,
+        loading: false,
+      });
+    }, 600);
+  try {
+    const response = await sendWebSocket(webSocket, message);
+    let [data, time] = response;
+    let KST = new Date(time);
+    console.log("KST", KST);
+    let serverTime = KST.toLocaleTimeString("ko-KR", { timeStyle: "short" });
+    console.log("serverTime", serverTime);
+    console.log("data :", data);
+    switch (data.header.message_type) {
+      case "confirm":
+        callback({
+          type: "MSESSAGE_SUCCESS",
+          who: data.header.who,
+          text: <ConfirmChat message={data.content} />,
+          time: serverTime,
+          loading: false,
+        });
+        break;
+      case "plain":
+        callback({
+          type: "MSESSAGE_SUCCESS",
+          who: data.header.who,
+          text: data.content,
+          time: serverTime,
+          loading: false,
+        });
+        break;
+      default:
+        break;
+    }
+  } catch (error) {
+    console.error(error);
+    callback({
+      type: "MSESSAGE_FAIL",
+    });
+  }
 }
 export async function sendMessage(message: string, callback: ChatDispatch) {
   if (message === "메뉴")
@@ -60,20 +130,8 @@ export async function sendMessage(message: string, callback: ChatDispatch) {
     console.log("KST", KST);
     let serverTime = KST.toLocaleTimeString("ko-KR", { timeStyle: "short" });
     console.log("serverTime", serverTime);
-
     result = response?.data;
     console.log("result :", result);
-    // switch (result.header.message_type) {
-    //   case "confirm":
-
-    //     break;
-    //   case "plain":
-
-    //     break;
-
-    //   default:
-    //     break;
-    // }
     if (result.header?.message_type === "confirm") {
       callback({
         type: "MSESSAGE_SUCCESS",
